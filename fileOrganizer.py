@@ -33,7 +33,7 @@ file_types = {
 for file in os.listdir(folder):
     path = os.path.join(folder, file)
 
-    if(os.path.isdir):
+    if os.path.isdir(path):
         continue
 
     extention = os.path.splitext(file)[1].lower()
@@ -52,6 +52,6 @@ for file in os.listdir(folder):
         others = os.path.join(folder, "Others")
         os.makedirs(others, exist_ok=True)
         shutil.move(path, os.path.join(others, file))
-        print(f"{file} -> {category}")
-        
+        print(f"{file} -> Others")
+
 print("Done!")
